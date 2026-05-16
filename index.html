@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Mini Project</title>
+    <!-- Use a modern, beautiful font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Theme Switcher (Dark/Light mode) -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round">
+                <span class="icon sun">☀️</span>
+                <span class="icon moon">🌙</span>
+            </div>
+        </label>
+        <em id="theme-text">Light Mode</em>
+    </div>
+
+    <main class="game-container">
+        <header>
+            <h1>Tic Tac Toe 🎮</h1>
+            <!-- Game Mode Selector -->
+            <div class="mode-selector">
+                <button id="btn-2player" class="active">2 Players</button>
+                <button id="btn-1player">1 Player (vs AI)</button>
+            </div>
+        </header>
+
+        <!-- Scoreboard to keep track of wins and draws -->
+        <div class="scoreboard">
+            <div class="score-card player-x">
+                <span class="label">Player X</span>
+                <span class="score" id="score-x">0</span>
+            </div>
+            <div class="score-card draws">
+                <span class="label">Draws</span>
+                <span class="score" id="score-draws">0</span>
+            </div>
+            <div class="score-card player-o">
+                <span class="label">Player O</span>
+                <span class="score" id="score-o">0</span>
+            </div>
+        </div>
+
+        <!-- Turn indicator to show whose turn it is -->
+        <div class="turn-indicator" id="turn-indicator">
+            Player <span id="current-player" class="x-turn">X</span>'s Turn
+        </div>
+
+        <!-- The 3x3 Grid Board -->
+        <div class="board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <!-- Restart Game button -->
+        <button class="btn-restart" id="btn-restart">Restart Game</button>
+    </main>
+
+    <!-- Modal Popup for displaying Win/Draw messages -->
+    <div class="modal" id="result-modal">
+        <div class="modal-content">
+            <h2 id="result-message">Player X Wins!</h2>
+            <button class="btn-play-again" id="btn-play-again">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
